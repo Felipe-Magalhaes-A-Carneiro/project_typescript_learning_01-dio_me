@@ -1,4 +1,4 @@
-/*  //TIPOS DE VARIÁVEIS 1 - PRIMITIVAS*/
+//TIPOS DE VARIÁVEIS 1 - PRIMITIVAS*/
 
 //BOOLEAN 
 let ligado : boolean = true; // Declarando o seu tipo (boolean, no caso)
@@ -24,8 +24,8 @@ let indefinido : undefined = undefined; // A lógica é a mesma para o 'null', a
 
 //TIPOS DE VARIÁVEIS 3 - ABRANGENTES:
 
-// VOID (tipos abrangentes)
-let retorno : void; // Usado para que não retorne nada. Não há necessidade de atribuir nenhum valor
+// VOID
+let retorno : void; // Usado para que não retorne nada. Obs.: Não há necessidade de atribuir nenhum valor
 
 //Utilizando em 'function':
 function executaQuery(): void{
@@ -37,3 +37,28 @@ let retornoView : any = "Felipe"; // 'Any' aceita qualquer coisa.
 let retornaValor : any = 123;
 
 //Quando ele é usado? R.: Quando você tem uma 'function' que o seu valor não é previsivel
+
+//OBJETOS:
+// Objeto - sem previsibilidade (sem propriedades)
+let produto : object = {
+    name : "felipe",
+    idade : 31,
+};
+
+// Objeto "tipado" -  com previsibilidade (com propriedades)
+type ProdutoLoja = {
+    nome : string;
+    preco : number;
+    unidades : number;
+};
+
+//Utilizando o objeto com propriedades:
+//Uma vez criada o tipo (type) de objeto e definidas as suas propriedades, podemos agora 'chama-las' e usa-las de acordo com a necessidade
+let meuProduto : ProdutoLoja = {
+    nome : "Tênis",
+    unidades : 16,
+    preco : 289.99, 
+}
+
+//Obs.: Se você não utilizar todas as propriedades do objeto (ProdutoLoja, no caso), a variável criada (meuProduto, no caso) será considera um erro pelo Typescript, não permitindo dar continuidade. 
+
