@@ -58,7 +58,16 @@ let meuProduto : ProdutoLoja = {
     nome : "Tênis",
     unidades : 16,
     preco : 289.99, 
-}
+};
 
 //Obs.: Se você não utilizar todas as propriedades do objeto (ProdutoLoja, no caso), a variável criada (meuProduto, no caso) será considera um erro pelo Typescript, não permitindo dar continuidade. 
 
+//ARRAYS (Vetores)
+let dados : string [] = ["Felipe", "Ana", "Adriana"];
+
+//Outra maneira de declarar Arrays:
+let dados2 : Array<string> = ["Felipe", "Ana", "Adriana"];
+
+//ARRAYS DE MULTI TYPES:
+let infos : (string | number)[] = ["Felipe", "Ana", "Adriana"]
+//Obs.: Você consegue criar um vetor que aceita mais de um tipo, no caso, apenas string e number serão aceitas, se quiser utilizar um boolean não será possível, por exemplo. E sim, é possível ser mais de duas, se quiser.
