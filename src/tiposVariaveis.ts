@@ -69,5 +69,10 @@ let dados : string [] = ["Felipe", "Ana", "Adriana"];
 let dados2 : Array<string> = ["Felipe", "Ana", "Adriana"];
 
 //ARRAYS DE MULTI TYPES:
-let infos : (string | number)[] = ["Felipe", "Ana", "Adriana"]
+let infos : (string | number)[] = ["Felipe", "Ana", "Adriana"];
 //Obs.: Você consegue criar um vetor que aceita mais de um tipo, no caso, apenas string e number serão aceitas, se quiser utilizar um boolean não será possível, por exemplo. E sim, é possível ser mais de duas, se quiser.
+
+//TUPLAS:
+//Vetores de Multi TYPEs, porém você o usa em um 'local' certo. Ao usa-la, suas propriedades devem ser utilizadas na mesma ordem que foram atribuídas.
+let boleto: [string, number, number] = ["água conta", 199.90, 342412456];
+
