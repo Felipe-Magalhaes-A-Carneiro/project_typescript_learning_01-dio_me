@@ -80,3 +80,7 @@ let boleto: [string, number, number] = ["água conta", 199.90, 342412456];
 // Métodos são feitos da mesma forma que no Javascript
 
 dados.pop();
+
+//DATE(Data)
+let aniversario : Date = new Date("2024-10-30 16:30");
+console.log(aniversario.toString());
