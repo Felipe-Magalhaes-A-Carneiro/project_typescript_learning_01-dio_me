@@ -1,14 +1,15 @@
-type heroi = {
-    name: string;
-    vulgo: string;
-}
+//FUNÇÕES
 
-function mostraObjeto(pessoa: heroi){
-    console.log(pessoa);
-}
+function addNumber(x: number, y: number) : number {
+    return x + y;
+};
 
-mostraObjeto({
-    name: "Bruce Wayne",
-    vulgo: "Batman"
-});
-console.log("Olá, Mundo");
+let soma : number = addNumber(3, 4);
+
+console.log(soma);
+
+function addToHello (name : string) : string {
+    return `Hello ${name}`;
+};
+
+console.log(addToHello);
