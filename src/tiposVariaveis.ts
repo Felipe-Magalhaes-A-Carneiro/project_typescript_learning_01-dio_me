@@ -76,3 +76,7 @@ let infos : (string | number)[] = ["Felipe", "Ana", "Adriana"];
 //Vetores de Multi TYPEs, porém você o usa em um 'local' certo. Ao usa-la, suas propriedades devem ser utilizadas na mesma ordem que foram atribuídas.
 let boleto: [string, number, number] = ["água conta", 199.90, 342412456];
 
+//ARRAYS - MÉTODOS
+// Métodos são feitos da mesma forma que no Javascript
+
+dados.pop();
