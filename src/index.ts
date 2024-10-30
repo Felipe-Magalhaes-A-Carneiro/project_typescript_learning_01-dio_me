@@ -9,7 +9,7 @@ let soma : number = addNumber(3, 4);
 console.log(soma);
 
 function addToHello (name : string) : string {
-    return `Hello ${name}`;
+    return `Hello, ${name}`;
 };
 
-console.log(addToHello);
+console.log(addToHello("Felipe"));

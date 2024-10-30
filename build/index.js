@@ -1,9 +1,13 @@
 "use strict";
-function mostraObjeto(pessoa) {
-    console.log(pessoa);
+//FUNÇÕES
+function addNumber(x, y) {
+    return x + y;
 }
-mostraObjeto({
-    name: "Bruce Wayne",
-    vulgo: "Batman"
-});
-console.log("Olá, Mundo");
+;
+let soma = addNumber(3, 4);
+console.log(soma);
+function addToHello(name) {
+    return `Hello ${name}`;
+}
+;
+console.log(addToHello("Felipe"));
