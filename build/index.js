@@ -1,13 +1,12 @@
 "use strict";
-//FUNÇÕES
-function addNumber(x, y) {
-    return x + y;
-}
+// INTERFACES
 ;
-let soma = addNumber(3, 4);
-console.log(soma);
-function addToHello(name) {
-    return `Hello ${name}`;
-}
-;
-console.log(addToHello("Felipe"));
+const bot = {
+    id: "1",
+    name: "Otimus Prime"
+};
+const bot2 = {
+    id: 2,
+    name: "Megatron",
+};
+console.log(bot, bot2);

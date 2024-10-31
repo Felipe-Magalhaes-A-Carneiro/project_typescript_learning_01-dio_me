@@ -1,27 +1,26 @@
-//FUNÇÕES
+// INTERFACES
 
-function addNumber(x: number, y: number) : number {
-    return x + y;
+//Comparação entre type e interface:
+type robot = {
+    readonly filiacao : string, //Propriedade 'readonly': não permite alteração. Um usuário não poderia alterar ser valor, por exemplo.
+    id: number | string;
+    name: string;
 };
 
-let soma : number = addNumber(3, 4);
-
-console.log(soma);
-
-// FUNÇÃO SIMPLES
-function addToHello (name : string) : string {
-    return `Hello, ${name}`;
+interface robot2 {
+    id: number | string;
+    name: string;
 };
 
-// FUNÇÃO MULTI TIPOS
-function CallToPhone (phone : number | string): number | string {
-    return phone
+const bot : robot = { //herdou 'type'
+    filiacao: "Bem.",
+    id: "1",
+    name: "Otimus Prime"
+}
+
+const bot2 : robot2 = { //herdou 'interface'
+    id: 2,
+    name: "Megatron",
 };
 
-// FUNÇÃO ASYNC
-async function getDatabase(id:number): Promise<string> {
-    return "Felipe";
-};
-
-console.log(addToHello("Felipe"));
-console.log(CallToPhone(999999999));
+console.log(bot, bot2);
