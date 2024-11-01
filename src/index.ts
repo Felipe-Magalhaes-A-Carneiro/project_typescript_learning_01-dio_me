@@ -1,26 +1,32 @@
-// INTERFACES
+// CLASSES
 
-//Comparação entre type e interface:
-type robot = {
-    readonly filiacao : string, //Propriedade 'readonly': não permite alteração. Um usuário não poderia alterar ser valor, por exemplo.
-    id: number | string;
+class Character {
     name: string;
+    stregth: number;
+    skill: number;
+
+    constructor(name: string, stregth: number, skill: number){  //Na hora que cria o objeto, você poderá recener suas propriedades
+        this.name = name; //'this' ao usa-lo você diz sobre a class que ele está dentro
+        this.stregth = stregth;
+        this.skill = skill;
+    };
+
+    attack(): void {
+        console.log(`Attack with ${this.stregth} points. `);
+    }
+
 };
 
-interface robot2 {
-    id: number | string;
-    name: string;
+// outros detalhes para aprender:
+
+class Character2 {
+    name?: string; // o uso do '?' significa 'opcional' logo, não é necessário atribuir o name no 'constructor' e nem defini-lo.
+    stregth: number;
+    skill: number;
+
+    constructor(stregth: number, skill: number){  //Na hora que cria o objeto, você poderá recener suas propriedades
+        this.stregth = stregth;
+        this.skill = skill;
+    };
+
 };
-
-const bot : robot = { //herdou 'type'
-    filiacao: "Bem.",
-    id: "1",
-    name: "Otimus Prime"
-}
-
-const bot2 : robot2 = { //herdou 'interface'
-    id: 2,
-    name: "Megatron",
-};
-
-console.log(bot, bot2);
