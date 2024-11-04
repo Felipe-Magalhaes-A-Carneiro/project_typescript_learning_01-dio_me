@@ -42,6 +42,20 @@ class Character2 {
 
 };
 
+//SUBCLASSES
+// Uma classe que herda de outra classe. Conceito de herança
+
+class Robot extends Character {
+    expPoints: number;
+    constructor(name: string, stregth: number, skill: number, expPoints: number){
+        super(name, stregth, skill); // 'super' para invocar o constructor da classe 'pai', no caso 'Character' para o filho 'Robot'
+        this.expPoints = expPoints;
+    };
+};
+
 const p1 = new Character("Optimus Prime", 25, 20);
 console.log(p1);
+
+const p2 = new Robot("Bumblebee", 10, 7, 100);
+console.log(p2);
 p1.attack();
