@@ -6,13 +6,13 @@ class Character {
     skill: number;
 
     constructor(name: string, stregth: number, skill: number){  //Na hora que cria o objeto, você poderá recener suas propriedades
-        this.name = name; //'this' ao usa-lo você diz sobre a class que ele está dentro
+        this.name = name; //'this' ao usa-lo você se refere a algo da class que ele está dentro
         this.stregth = stregth;
         this.skill = skill;
     };
 
     attack(): void {
-        console.log(`Attack with ${this.stregth} points. `);
+        console.log(`${this.name} attacks with ${this.stregth} points. `);
     }
 
 };
@@ -24,9 +24,13 @@ class Character2 {
     stregth: number;
     skill: number;
 
-    constructor(stregth: number, skill: number){  //Na hora que cria o objeto, você poderá recener suas propriedades
+    constructor(stregth: number, skill: number){  //Na hora que cria o objeto, você poderá receber suas propriedades
         this.stregth = stregth;
         this.skill = skill;
     };
 
 };
+
+const p1 = new Character("Optimus Prime", 25, 20);
+console.log(p1);
+p1.attack();
