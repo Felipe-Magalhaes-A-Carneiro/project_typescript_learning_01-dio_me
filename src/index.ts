@@ -1,14 +1,4 @@
-type heroi = {
-    name: string;
-    vulgo: string;
-}
+// TESTANDO SERVIDOR LOCAL 'TS Node Dev':
 
-function mostraObjeto(pessoa: heroi){
-    console.log(pessoa);
-}
-
-mostraObjeto({
-    name: "Bruce Wayne",
-    vulgo: "Batman"
-});
-console.log("Olá, Mundo");
+let dado: string = "Felipe";
+console.log(dado);
