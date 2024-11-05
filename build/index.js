@@ -1,48 +1,13 @@
 "use strict";
-// CLASSES
-class Character {
-    constructor(name, stregth, skill) {
-        this.name = name; //'this' ao usa-lo você se refere a algo da class que ele está dentro
-        this.stregth = stregth;
-        this.skill = skill;
-    }
-    ;
-    attack() {
-        console.log(`${this.name} attacks with ${this.stregth} points. `);
-    }
+// GENERICS
+function concatenarArray(...itens) {
+    return new Array().concat(...itens);
 }
-;
-// outros detalhes para aprender:
-// DATA MODIFIERS - MODIFICADORES DE ACESSO:
-/* Tipos:
-    public (público)
-    private (privado)
-    protected (protegido)
-*/
-class Character2 {
-    constructor(name, stregth, skill) {
-        this.name = name;
-        this.stregth = stregth;
-        this.skill = skill;
-    }
-    ;
-    Defense() {
-        console.log(`${this.name} defends with ${this.stregth} points. `);
-    }
-}
-;
-//SUBCLASSES
-// Uma classe que herda de outra classe. Conceito de herança
-class Robot extends Character {
-    constructor(name, stregth, skill, expPoints) {
-        super(name, stregth, skill); // 'super' para invocar o constructor da classe 'pai', no caso 'Character' para o filho 'Robot'
-        this.expPoints = expPoints;
-    }
-    ;
-}
-;
-const p1 = new Character("Optimus Prime", 25, 20);
-console.log(p1);
-const p2 = new Robot("Bumblebee", 10, 7, 100);
-console.log(p2);
-p1.attack();
+// Usando a função criada acima:
+const numerosArray = concatenarArray([1, 2], [3]); //utilizo a função para aceitar números
+const nomesArray = concatenarArray(["Felipe ", "Magalhaes "], ["Araujo "]); // utilizo a mesma função para aceitar textos
+//Fazendo a função se tornar 'generic', logo ela pode aceitar tudo. Isso pode não ser bom para a segurança.
+// Prova da falta de segurança é adicionar texto em algo que tem números:
+numerosArray.push(" Carneiro.");
+console.log(numerosArray);
+console.log(nomesArray);
