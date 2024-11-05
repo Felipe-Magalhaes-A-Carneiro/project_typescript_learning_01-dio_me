@@ -1,6 +1,6 @@
 // GENERICS
 
-function concatenarArray (...itens: any[]): any[]{ //defini que a concatenação occora com QUALQUER (: any[])tipo de variável. 
+function concatenarArray(...itens: any[]): any[]{ //defini que a concatenação ocorra com QUALQUER (: any[])tipo de variável. 
     return new Array().concat(...itens);
 }
 
@@ -16,3 +16,16 @@ numerosArray.push(" Carneiro.");
 
 console.log(numerosArray);
 console.log(nomesArray);
+
+//Utilizando Generics na prática:
+/*<> = setas angulares
+
+Utilize <> para delimitar a função e aplique o seu tipo. Exemplo:
+*/
+function concatArray<T>(...itens: T[]): T[]{
+    return new Array().concat(...itens);
+};
+
+const apenasNumerosArray = concatArray<number[]>([4, 5], [6]);
+
+console.log(apenasNumerosArray);
