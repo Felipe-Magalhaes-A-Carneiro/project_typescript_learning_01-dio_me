@@ -1,13 +1,14 @@
 // DECORATORS
 // Decorar uma função e execute uma ação em seguida. Frameworks utilizam muito.
 
-function ExibirNome(target: any){ //Exibirá qualquer coisa, no caso apenas uma classe 'funcionario'
-    console.log(target)
+function apiVersion(version: string){
+    return (target: any) =>{ // termo 'factory' função que chama outra função
+        Object.assign(target.prototyoe, {__version: version})
+    }
 };
 
-//Utilize o '@' para 'decorar' e o nome do método:
-@ExibirNome
+@apiVersion("1.10")
+class Api{}
 
-class funcionario{};
-@ExibirNome // O que houver depois da sua linha de código será mostrado
-class funcionario02{};
+const api = new Api();
+console.log(api.__version);
