@@ -1,14 +1,35 @@
 // DECORATORS
 // Decorar uma função e execute uma ação em seguida. Frameworks utilizam muito.
 
-function apiVersion(version: string){
-    return (target: any) =>{ // termo 'factory' função que chama outra função
-        Object.assign(target.prototyoe, {__version: version})
-    }
+function minLength(length: number){
+    return (target: any, key: string) => {
+        let _value = target[key];  //'_value' possuí um _ 'underline' no ínicio, isso é convenção para indicar que é um atributo privado
+
+        const getter = () => _value;
+        const setter = (value: string) =>{
+            if (value.length < length){
+                throw new Error(`Tamanho menor do que ${length}.`);
+            } else {
+                _value = value;
+            };
+        };
+        Object.defineProperty(target, key, {
+            get: getter,
+            set: setter,
+        })
+    };
 };
 
-@apiVersion("1.10")
-class Api{}
+//ATRIBUTE DECORATOR
 
-const api = new Api();
-console.log(api.__version);
+class Api{
+
+    name: string;
+
+    constructor(name: string){
+        this.name = name;
+    }
+}
+
+const api = new Api("Produtos");
+console.log(api.name);
