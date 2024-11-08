@@ -4,8 +4,25 @@
 
 class Usuario {
     private _nome: string;
-    constructor (nome: string){
-        this._nome = nome; // ' _ ' é uma representação de convenção para indicar que é um atributo privado 
+    private _idade: number;
+
+    constructor (nome: string, idade: number){
+        this._nome = nome; // ' _ ' é uma representação de convenção para indicar que é um atributo privado
+        this._idade = idade; 
+    }
+
+    //SETTERS
+    // Definir ou modificar o valor de um atributo, com a opção de aplicar validações ou restrições
+    set idade(novaIdade: number){
+        if(novaIdade > 0){
+            this._idade = novaIdade;
+        } else {
+            console.log("Idade inválida!");
+        } 
+    }
+
+    get idade(): number{
+        return this._idade;
     }
 
     get nome (): string{
@@ -13,5 +30,5 @@ class Usuario {
     }
 };
 
-const user = new Usuario ("Felipe");
-console.log(user.nome); // Chama o getter e exibe "Felipe"
+const user = new Usuario ("Felipe", 31);
+console.log(user.nome, user.idade); // Chama o getter e exibe "Felipe"
