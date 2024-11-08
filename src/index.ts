@@ -1,35 +1,17 @@
-// DECORATORS
-// Decorar uma função e execute uma ação em seguida. Frameworks utilizam muito.
+//GETTERS E SETTERS
+// GETTERS
+/* Responsável por recuperarp valor de um atributo privado*/
 
-function minLength(length: number){
-    return (target: any, key: string) => {
-        let _value = target[key];  //'_value' possuí um _ 'underline' no ínicio, isso é convenção para indicar que é um atributo privado
+class Usuario {
+    private _nome: string;
+    constructor (nome: string){
+        this._nome = nome; // ' _ ' é uma representação de convenção para indicar que é um atributo privado 
+    }
 
-        const getter = () => _value;
-        const setter = (value: string) =>{
-            if (value.length < length){
-                throw new Error(`Tamanho menor do que ${length}.`);
-            } else {
-                _value = value;
-            };
-        };
-        Object.defineProperty(target, key, {
-            get: getter,
-            set: setter,
-        })
-    };
+    get nome (): string{
+        return this._nome;
+    }
 };
 
-//ATRIBUTE DECORATOR
-
-class Api{
-
-    name: string;
-
-    constructor(name: string){
-        this.name = name;
-    }
-}
-
-const api = new Api("Produtos");
-console.log(api.name);
+const user = new Usuario ("Felipe");
+console.log(user.nome); // Chama o getter e exibe "Felipe"
